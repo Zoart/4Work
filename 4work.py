@@ -49,3 +49,12 @@ def color_pixel():
 def position_cursor():
     x, y = pyautogui.position()
     print(x, y)
+
+
+def convert_to_preferred_format(sec):
+    sec = sec % (24 * 3600)
+    hour = sec // 3600
+    sec %= 3600
+    min = sec // 60
+    second = sec % 60
+    return "%02d:%02d:%02d" % (hour, min, second)
